@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<servers>
+  <server auto-publish-setting="2" auto-publish-time="1" configuration-id="/Servers/ローカル・ホスト の Tomcat7 (Java7)-config" deployDir="wtpwebapps" hostname="localhost" id="ローカル・ホスト の Tomcat7 (Java7)" name="ローカル・ホスト の Tomcat7 (Java7)" runtime-id="Tomcat7 (Java7)" server-type="org.eclipse.jst.server.tomcat.70" server-type-id="org.eclipse.jst.server.tomcat.70" start-timeout="45" stop-timeout="15" testEnvironment="true" timestamp="12">
+    <list key="modules"/>
+  </server>
+  <server auto-publish-setting="2" auto-publish-time="1" configuration-id="/Servers/ローカル・ホスト の Tomcat8 (Java8)-config" deployDir="wtpwebapps" hostname="localhost" id="ローカル・ホスト の Tomcat8 (Java8)" name="ローカル・ホスト の Tomcat8 (Java8)" runtime-id="Tomcat8 (Java8)" server-type="org.eclipse.jst.server.tomcat.80" server-type-id="org.eclipse.jst.server.tomcat.80" start-timeout="45" stop-timeout="15" testEnvironment="true" timestamp="1">
+    <list key="modules" value0="example::org.eclipse.jst.jee.server:example::jst.web::3.1"/>
+  </server>
+</servers>

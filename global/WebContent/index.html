@@ -1,0 +1,157 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<title>グローバル製菓</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<link rel="stylesheet" href="css/global.css" type="text/css">
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000">
+	<table width="100%" border="0" cellpadding="0" cellspacing="0"
+		background="images/bannar-back.gif">
+		<tr>
+			<td width="626" valign="middle" align="left" nowrap>
+				<p>
+					<b> <font size="5" color="#990000"><img
+							src="images/pp.gif" width="70" height="70" align="middle">
+							グローバル製菓 社内システム </font>
+					</b>
+				</p>
+			</td>
+		</tr>
+	</table>
+	<br>
+	<table width="95%" border="0" cellspacing="5" cellpadding="5"
+		align="center">
+		<tr align="left" valign="top">
+			<td class="global-head3" width="25%">製品</td>
+			<td class="global-head3" width="25%">生産計画</td>
+			<td class="global-head3" width="25%">顧客</td>
+			<td class="global-head3" width="25%">受注</td>
+		</tr>
+		<tr align="left" valign="top">
+			<td height="2" class="global-head4">製品検索</td>
+			<td height="2" class="global-head4">生産計画検索</td>
+			<td height="2" class="global-head4">顧客検索</td>
+			<td height="2" class="global-head4">受注検索</td>
+		</tr>
+		<tr align="left" valign="top">
+			<td height="119">
+				<p class="global-bold">
+					<a href="Controller?action=productallselect">製品全件検索</a>
+				</p>
+				<ul>
+					<li class="global-small"><a href="productselectbyidform.jsp">製品番号</a></li>
+					<li class="global-small"><a href="productselectbynameform.jsp">製品名</a></li>
+					
+					<li class="global-small"><a href="productselectbycategoryform.jsp">製品カテゴリ</a></li>
+					<li class="global-small"><a href="productselectbystockform.jsp">在庫数</a></li>
+				</ul>
+			</td>
+			<td height="119">
+				<p class="global-bold">
+					<a href="Controller?action=planallselect">生産計画全件検索</a>
+				</p>
+				<ul>
+					<li class="global-small"><a href="planselectbyproductidform.jsp">製品番号</a></li>
+					<li class="global-small"><a href="planselectbyidform.jsp">生産計画番号</a></li>
+					<li class="global-small"><a href="planselectbyperiodform.jsp">期間</a></li>
+				</ul>
+			</td>
+			<td height="119">
+				<p class="global-bold">
+					<a href="Controller?action=customerallselect">顧客全件検索</a>
+				</p>
+				<ul>
+					<li class="global-small"><a href="customerselectbyidform.jsp">顧客番号</a></li>
+					<li class="global-small"><a href="customerselectbynameform.jsp">顧客名</a></li>
+					<li class="global-small"><a href="customerselectbyorganizationform.jsp">会社名</a></li>
+					<li class="global-small"><a href="customerselectbytelephonenumberform.jsp">電話番号</a></li>
+					<li class="global-small"><a href="customerselectbyaddressform.jsp">住所</a></li>
+					<li class="global-small"><a href="customerselectbyemailform.jsp">メールアドレス</a></li>
+					<li class="global-small"><a href="customerselectbyrankform.jsp">優待ランク</a></li>
+				</ul>
+			</td>
+			<td height="119">
+				<p class="global-bold">
+					<a href="Controller?action=orderallselect">受注全件検索</a>
+				</p>
+				<ul>
+					<li class="global-small"><a href="orderselectbycustomerform.jsp">顧客番号</a></li>
+					<li class="global-small"><a href="orderselectbyorgform.jsp">会社名</a></li>
+					<li class="global-small"><a href="orderdetailform.jsp">受注番号</a></li>
+					<li class="global-small"><a href="orderselectbyproductform.jsp">製品番号</a></li>
+					<li class="global-small"><a href="orderselectbyperiodform.jsp">期間</a></li>
+					<li class="global-small"><a href="orderselectbystatusform.jsp">受注ステータス</a></li>
+				</ul>
+			</td>
+		</tr>
+		<tr align="left" valign="top">
+			<td class="global-head4">製品管理</td>
+			<td class="global-head4">生産計画管理</td>
+			<td class="global-head4">顧客管理</td>
+			<td class="global-head4">受注管理</td>
+		</tr>
+		<tr align="left" valign="top">
+			<td>
+				<p class="global-bold">
+					<a href="productregistform.jsp">製品登録</a>
+				</p>
+				<p class="global-bold">
+					<a href="productselectforupdateform.jsp">製品更新</a>
+				</p> <!--
+      <p class="global-bold"><a href="productselectfordeleteform.jsp">製品削除</a></p>
+      -->
+			</td>
+			<td>
+				<p class="global-bold">
+					<a href="planregistform.jsp">生産計画登録</a>
+				</p>
+				<p class="global-bold">
+					<a href="planstatusupdateform.jsp">生産計画ステータス変更</a>
+				</p>
+				<p class="global-bold">
+					<a href="planselectforupdateform.jsp">生産計画更新</a>
+				</p> <!--
+      <p class="global-bold"><a href="planselectfordeleteform.jsp">生産計画削除</a></p>
+      -->
+			</td>
+			<td>
+				<p class="global-bold">
+					<a href="customerregistform.jsp">顧客登録</a>
+				</p>
+				<p class="global-bold">
+					<a href="customerupdateform.jsp">顧客更新</a>
+				</p> <!--
+      <p class="global-bold"><a href="customerdeleteform.jsp">顧客削除</a></p>
+      -->
+			</td>
+			<td>
+				<p class="global-bold">
+					<a href="orderstartform.jsp">新規受注登録</a>
+				</p>
+				<p class="global-bold">
+					<a href="Controller?action=ordercontinue">受注登録(継続)</a>
+				</p>
+				<p class="global-bold">
+					<a href="orderselectforupdateform.jsp">受注更新</a>
+				</p> <!--
+      <p class="global-bold"><a href="orderselectfordeleteform.jsp">受注削除</p>
+      -->
+			</td>
+		</tr>
+	</table>
+	<HR>
+	<table width="100%" border="0" cellpadding="0" cellspacing="0">
+		<tr>
+			<td height="70" valign="middle" align="center">
+				<p align="right">
+					Developed By Hewlett- Packard<img src="images/pp.gif" width="70"
+						height="70">
+				</p>
+		</tr>
+	</table>
+</body>
+
+</html>
+

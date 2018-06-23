@@ -1,0 +1,4 @@
+.global-head3 {  font-size: 14pt; font-weight: bold; color: #FFFFFF; background-color: #993333}
+.global-head4 {  font-size: 12pt; font-weight: normal; color: #FFFFFF; background-color: #CC5555}
+.global-small {  font-size: 10pt}
+.global-bold {  font-weight: bold; list-style-type: square; border-color: black black #000000; background-color: #FFCC55}

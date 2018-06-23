@@ -1,0 +1,11 @@
+INDEX VERSION 1.130
+/Applications/Eclipse_4.7.3.app/Contents/workspace/.metadata/.plugins/org.eclipse.jst.jsp.core/jspsearch/3998265209.index
+/example/src
+/Applications/Eclipse_4.7.3.app/Contents/workspace/.metadata/.plugins/org.eclipse.jst.jsp.core/jspsearch/3882427326.index
+/example2/src
+/Applications/Eclipse_4.7.3.app/Contents/workspace/.metadata/.plugins/org.eclipse.jst.jsp.core/jspsearch/4049081067.index
+/example/src
+/Applications/Eclipse_4.7.3.app/Contents/workspace/.metadata/.plugins/org.eclipse.jst.jsp.core/jspsearch/3740417690.index
+/test/src
+/Applications/Eclipse_4.7.3.app/Contents/workspace/.metadata/.plugins/org.eclipse.jst.jsp.core/jspsearch/3217732264.index
+/example/src
