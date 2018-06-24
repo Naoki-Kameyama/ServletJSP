@@ -1,0 +1,8 @@
+2018-06-24 12:15:39 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: テーブル "EMPLOYEE" が見つかりません
+Table "EMPLOYEE" not found; SQL statement:
+SELECT ID, NAME, AGE FROM EMPLOYEE [42102-197]
+2018-06-24 12:16:40 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: テーブル "EMPLOYEE" が見つかりません
+Table "EMPLOYEE" not found; SQL statement:
+SELECT ID, NAME, AGE FROM EMPLOYEE [42102-197]
