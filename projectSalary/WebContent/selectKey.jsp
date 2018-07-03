@@ -11,40 +11,33 @@
 </head>
 <body>
 
-
-
 <table border=1>
 	<tr>
-		<th>年月日</th><th>種類</th><th>支給額</th><th>控除額</th><th>差引支給額</th><th>累計支給額</th><th>累計差引支給額</th>
+		<th>月</th><th>種類</th><th>支給額</th><th>控除額</th><th>差引支給額</th><th>累計支給額</th><th>累計差引支給額</th>
 	</tr>
 
 	<%
 	double InputCumulative = 0;
 	double TotalCumulative = 0;
-	ArrayList<Salary> sset = (ArrayList<Salary>)session.getAttribute("list");
-	Iterator<Salary> itr = sset.iterator();
-
+	ArrayList<Salary> akey = (ArrayList<Salary>)session.getAttribute("key");
+	Iterator<Salary> itr = akey.iterator();
 	while(itr.hasNext()){
-
-		Salary salary = itr.next();
+		Salary key = itr.next();
 		out.println("<tr>");
-		out.println("<td>" + salary.getMonth() + "</td>");
-		out.println("<td>" + salary.getType() + "</td>");
-		out.println("<td>" + (int)salary.getInput() + "</td>");
-		out.println("<td>" + (int)salary.getOutput() + "</td>");
-		out.println("<td>" + (int)salary.getTotal() + "</td>");
-		InputCumulative += salary.getInput();
+		out.println("<td>" + key.getMonth() + "</td>");
+		out.println("<td>" + key.getType() + "</td>");
+		out.println("<td>" + (int)key.getInput() + "</td>");
+		out.println("<td>" + (int)key.getOutput() + "</td>");
+		out.println("<td>" + (int)key.getTotal() + "</td>");
+		InputCumulative += key.getInput();
 		out.println("<td>" + (int)InputCumulative + "</td>");
-		TotalCumulative += salary.getTotal();
+		TotalCumulative += key.getTotal();
 		out.println("<td>" + (int)TotalCumulative + "</td>");
 		out.println("</tr>");
-
 	}
 	%>
 </table>
-
 <a href="/projectSalary/top.jsp">TOP</a>
-<a href="/projectSalary/DeleteConfirm.jsp">初期化</a>
 
 
 </body>

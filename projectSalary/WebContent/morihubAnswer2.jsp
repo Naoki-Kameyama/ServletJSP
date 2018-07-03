@@ -4,11 +4,9 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<link rel="stylesheet" type="text/css" href="/projectSalary/css/main.css">
 <title>Insert title here</title>
 </head>
 <body>
-<p>DBを削除しました</p>
-<a href="/projectSalary/top.jsp">TOP</a>
+
 </body>
 </html>

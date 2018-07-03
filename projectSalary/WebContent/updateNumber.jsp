@@ -2,6 +2,7 @@
     pageEncoding="UTF-8"%>
 <%@ page import="java.util.*" %>
 <%@ page import="model.Salary" %>
+
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -10,7 +11,6 @@
 <title>Insert title here</title>
 </head>
 <body>
-
 
 
 <table border=1>
@@ -37,11 +37,23 @@
 		out.println("<td>" + (int)InputCumulative + "</td>");
 		TotalCumulative += salary.getTotal();
 		out.println("<td>" + (int)TotalCumulative + "</td>");
+		%>
+		<td>
+		<FORM action="update.jsp" method="get">
+	    <INPUT TYPE="hidden" NAME="button" VALUE="singleUpdate">
+	    <%
+	    out.println("<INPUT TYPE=hidden NAME=su VALUE=" + salary.getMonth() + ">");
+	    %>
+	    <input type = "submit" value="更新">
+	    </FORM>
+		</td>
+		<%
 		out.println("</tr>");
 
 	}
 	%>
 </table>
+
 
 <a href="/projectSalary/top.jsp">TOP</a>
 <a href="/projectSalary/DeleteConfirm.jsp">初期化</a>

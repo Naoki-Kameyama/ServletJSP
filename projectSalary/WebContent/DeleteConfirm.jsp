@@ -4,6 +4,7 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<link rel="stylesheet" type="text/css" href="/projectSalary/css/main.css">
 <title>Insert title here</title>
 </head>
 <body>
@@ -18,6 +19,7 @@
     <INPUT TYPE="hidden" NAME="button" VALUE="select">
     <input type = "submit" value="いいえ">
     </FORM>
+
 
 </body>
 </html>

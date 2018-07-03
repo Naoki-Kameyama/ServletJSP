@@ -8,7 +8,17 @@
 <title>Insert title here</title>
 </head>
 <body>
-<p>DBを削除しました</p>
-<a href="/projectSalary/top.jsp">TOP</a>
+
+
+<div class="center">
+<FORM action="question.jsp" method="get">
+    <INPUT TYPE="hidden" NAME="button" VALUE="insert">
+    <p>ログインID(英数字)：<input type = "text" name="question"><br>
+    <input type = "submit" value="Login">
+</FORM>
+	<a href="/projectSalary/top.jsp">TOP</a>
+
+
+
 </body>
 </html>

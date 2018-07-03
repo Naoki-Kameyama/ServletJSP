@@ -12,7 +12,6 @@
 <body>
 
 
-
 <table border=1>
 	<tr>
 		<th>年月日</th><th>種類</th><th>支給額</th><th>控除額</th><th>差引支給額</th><th>累計支給額</th><th>累計差引支給額</th>
@@ -37,14 +36,25 @@
 		out.println("<td>" + (int)InputCumulative + "</td>");
 		TotalCumulative += salary.getTotal();
 		out.println("<td>" + (int)TotalCumulative + "</td>");
+		%>
+		<td>
+		<FORM action="Contoroller" method="get">
+	    <INPUT TYPE="hidden" NAME="button" VALUE="singleDelete">
+	    <%
+	    out.println("<INPUT TYPE=hidden NAME=sd VALUE=" + salary.getMonth() + ">");
+	    %>
+	    <input type = "submit" value="削除">
+	    </FORM>
+		</td>
+		<%
 		out.println("</tr>");
 
 	}
 	%>
 </table>
-
 <a href="/projectSalary/top.jsp">TOP</a>
 <a href="/projectSalary/DeleteConfirm.jsp">初期化</a>
+
 
 
 </body>

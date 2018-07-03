@@ -1,32 +1,35 @@
 package model;
 
 import java.io.Serializable;
+import java.sql.Date;
 
 public class Salary implements Serializable{
 
 
-	private int month;
+	private Date month;
 	private double input;
 	private double output;
 	private double total;
+	private String type;
 
 	public Salary() {
 
 	}
 
-	public Salary(int month, double input, double output, double total) {
+	public Salary(Date month, double input, double output, double total, String type) {
 		this.month = month;
 		this.input = input;
 		this.output = output;
 		this.total = total;
+		this.type = type;
 	}
 
 
-	public int getMonth() {
+	public Date getMonth() {
 		return month;
 	}
 
-	public void setMonth(int month) {
+	public void setMonth(Date month) {
 		this.month = month;
 	}
 
@@ -52,6 +55,14 @@ public class Salary implements Serializable{
 
 	public void setTotal(double total) {
 		this.total = total;
+	}
+
+	public String getType() {
+		return type;
+	}
+
+	public void setType(String type) {
+		this.type = type;
 	}
 
 }

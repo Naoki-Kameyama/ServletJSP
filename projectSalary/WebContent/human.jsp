@@ -8,7 +8,14 @@
 <title>Insert title here</title>
 </head>
 <body>
-<p>DBを削除しました</p>
-<a href="/projectSalary/top.jsp">TOP</a>
+
+
+
+<h1>SALARY MANAGER</h1>
+		<div class="button">
+    		<a href="Contoroller?button=morihub&name=kameyama">亀山</a>
+    		<a href="Contoroller?button=morihub&name=gondou">権藤</a>
+    	</div>
+
 </body>
 </html>

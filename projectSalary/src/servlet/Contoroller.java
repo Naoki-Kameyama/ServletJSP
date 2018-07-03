@@ -1,6 +1,7 @@
 package servlet;
 
 import java.io.IOException;
+import java.sql.Date;
 import java.util.ArrayList;
 
 import javax.servlet.RequestDispatcher;
@@ -9,8 +10,10 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import dao.SalaryDAO;
+import model.Mori;
 import model.Salary;
 
 /**
@@ -33,28 +36,33 @@ public class Contoroller extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-		// TODO Auto-generated method stub
-		//response.getWriter().append("Served at: ").append(request.getContextPath());
 		String para = request.getParameter("button");
+		HttpSession session = request.getSession(true);
+		int tensu = 0;
+
 		try {
 			SalaryDAO sdao = new SalaryDAO();
 			RequestDispatcher rd = null;
-			//HttpSession session = request.getSession();
 
 			if (para.equals("insert")) {
-				int month = Integer.parseInt(request.getParameter("month"));
-				System.out.println("month: "+month);
+
+				String year = request.getParameter("year");
+				String month = request.getParameter("month");
+				String day = request.getParameter("day");
+				String type = request.getParameter("type");
 				double input = Double.parseDouble(request.getParameter("input"));
 				double output = Double.parseDouble(request.getParameter("output"));
 				double total = input - output;
 
 				Salary salary = new Salary();
 
-				salary.setMonth(month);
-				System.out.println("month2: "+salary.getMonth());
+				Date date= Date.valueOf(year+"-"+month+"-"+day);
+
+				salary.setMonth(date);
 				salary.setInput(input);
 				salary.setOutput(output);
 				salary.setTotal(total);
+				salary.setType(type);
 
 				sdao.insert(salary);
 
@@ -63,11 +71,64 @@ public class Contoroller extends HttpServlet {
 			}
 			if(para.equals("select")) {
 				ArrayList<Salary> list = sdao.findAll();
-				request.setAttribute("list", list);
+				session.setAttribute("list", list);
 				rd = request.getRequestDispatcher("/view.jsp");
+				rd.forward(request, response);
+			}
+
+			if(para.equals("selectDelete")) {
+				ArrayList<Salary> list = sdao.findAll();
+				session.setAttribute("list", list);
+				rd = request.getRequestDispatcher("/selectDelete.jsp");
+				rd.forward(request, response);
+			}
+
+			if(para.equals("singleDelete")) {
+				String dd = request.getParameter("sd");
+				sdao.singleDelete(dd);
+				ArrayList<Salary> list = sdao.findAll();
+				session.setAttribute("list", list);
+				rd = request.getRequestDispatcher("/selectDelete.jsp");
+				rd.forward(request, response);
+			}
+
+			if(para.equals("selectUpdate")) {
+				ArrayList<Salary> list = sdao.findAll();
+				session.setAttribute("list", list);
+				rd = request.getRequestDispatcher("/updateNumber.jsp");
+				rd.forward(request, response);
+			}
+
+			if(para.equals("singleUpdate")) {
+				String su = request.getParameter("su");
+				String year = request.getParameter("year");
+				String month = request.getParameter("month");
+				String day = request.getParameter("day");
+				String type = request.getParameter("type");
+				double input = Double.parseDouble(request.getParameter("input"));
+				double output = Double.parseDouble(request.getParameter("output"));
+				double total = input - output;
+				Salary salary = new Salary();
+				Date date= Date.valueOf(su);
+				Date updateDate= Date.valueOf(year+"-"+month+"-"+day);
+
+				salary.setMonth(date);
+				salary.setInput(input);
+				salary.setOutput(output);
+				salary.setTotal(total);
+				salary.setType(type);
+
+				sdao.singleUpdate(salary, updateDate);
+
+				ArrayList<Salary> list = sdao.findAll();
+				session.setAttribute("list", list);
+				rd = request.getRequestDispatcher("/updateNumber.jsp");
 				rd.forward(request, response);
 
 			}
+
+
+
 
 			if(para.equals("delete")) {
 				sdao.delete();
@@ -76,8 +137,88 @@ public class Contoroller extends HttpServlet {
 
 			}
 
+			if(para.equals("keySelect")) {
+				String month = request.getParameter("selectMonth");
+				String year = request.getParameter("selectYear");
+				ArrayList<Salary> key = sdao.findKey(year, month);
+				session.setAttribute("key",key);
+				rd = request.getRequestDispatcher("/selectKey.jsp");
+				rd.forward(request, response);
+			}
+
+
+
+			if(para.equals("questionAdd")) {
+				String userId = request.getParameter("q");
+				String question = request.getParameter("qu");
+				String answer = request.getParameter("an");
+				System.out.println(userId);
+				System.out.println(question);
+				System.out.println(answer);
+
+
+				Mori mori = new Mori();
+
+				mori.setUserId(userId);
+				mori.setQuestion(question);
+				mori.setAnswer(answer);
+
+				sdao.insertQuestion(mori);
+
+				rd = request.getRequestDispatcher("/question.jsp?question="+userId);
+				rd.forward(request, response);
+
+			}
+
+
+			if(para.equals("questionList")) {
+				String userId = request.getParameter("q");
+				ArrayList<Mori> questionList = sdao.findQuestionList(userId);
+				session.setAttribute("questionList", questionList);
+				rd = request.getRequestDispatcher("/questionView.jsp");
+				rd.forward(request, response);
+			}
+
+
+			if(para.equals("morihub")) {
+
+
+				request.setAttribute("num", 1);
+
+
+				String userName = request.getParameter("name");
+				System.out.println("username: "+userName);
+				ArrayList<Mori> questionList = sdao.findQuestionList(userName);
+				session.setAttribute("questionAnswer", questionList);
+
+				System.out.println("hello");
+				rd = request.getRequestDispatcher("/morihubAnswer.jsp");
+				rd.forward(request, response);
+			}
+
+			if(para.equals("saiten")){
+
+
+
+				String ans = request.getParameter("ans");
+				String aaa = request.getParameter("aaa");
+				System.out.println("ans: "+ans);
+				System.out.println("qqq: "+aaa);
+				if(ans.equals(aaa)) {
+					tensu++;
+				}
+				System.out.println("点数: "+tensu);
+
+				rd = request.getRequestDispatcher("/morihubAnswer2.jsp");
+				rd.forward(request, response);
+			}
+
+
+
+
+
 		} catch (Exception e) {
-			System.out.println("exceptino");
+			System.out.println("exception");
 			e.printStackTrace();
 		}
 

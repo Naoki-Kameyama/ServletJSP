@@ -4,10 +4,11 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<link rel="stylesheet" type="text/css" href="/projectSalary/css/main.css">
 <title>登録完了</title>
 </head>
 <body>
 <p>登録が完了しました。</p>
-<a href="/projectSalary/top.jsp">戻る</a>
+<a href="/projectSalary/top.jsp">TOP</a>
 </body>
 </html>

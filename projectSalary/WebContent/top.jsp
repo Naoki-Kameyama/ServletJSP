@@ -4,25 +4,25 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<link rel="stylesheet" type="text/css" href="/projectSalary/css/main.css">
 <title>Insert title here</title>
 </head>
 <body>
 
 
-<H2>給与の登録</H2>
 
-    <FORM action="Contoroller" method="get">
-    <INPUT TYPE="hidden" NAME="button" VALUE="insert">
-    月：<input type = "text" name="month"><br>
-    支給額：<input type = "text" name="input"><br>
-    控除額：<input type = "text" name="output"><br>
-    <input type = "submit" value="登録">
-    </FORM>
 
-    <FORM action="Contoroller" method="get">
-    <INPUT TYPE="hidden" NAME="button" VALUE="select">
-    <input type = "submit" value="参照">
-    </FORM>
+	<h1>SALARY MANAGER</h1>
+		<div class="button">
+			<a href="Contoroller?button=select">全件一覧</a>
+			<a href="/projectSalary/register.jsp">登録</a>
+    		<a href="/projectSalary/selectNumber.jsp">検索</a>
+    		<a href="Contoroller?button=selectUpdate">更新</a>
+    		<a href="Contoroller?button=selectDelete">削除</a>
+    		<a href="/projectSalary/login.jsp">質問</a>
+    		<a href="/projectSalary/human.jsp">MoriHub</a>
+    	</div>
+
 
 </body>
 </html>
